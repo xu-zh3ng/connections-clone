@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Connections</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="connections.css">
+        <script src="archive.js"></script>
+        <script src="connections.js"></script>
+        </head>
+
+        <body>
+            <h1>Connections</h1>
+            <P>Create four groups of four!</P>
+            <div id="board">
+                <div id="solved"></div>
+                <div id="grid"></div>
+                <div id="popup" class="popup"></div>
+            </div>
+            <div id="mistakesleft">
+                Mistakes Remaining:
+                <span id="dots"></span>
+            </div>
+            <div id="button-row">
+                <button class="button" id="shuffle">Shuffle</button>
+                <button class="button" id="deselect">Deselect All</button>
+                <button disabled class="button" id="submit">Submit</button>
+            </div>
+            <div>
+                <button id="replay">Replay</button>
+            </div>
+
+        </body>
+
+</html>
