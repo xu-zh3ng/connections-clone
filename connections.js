@@ -202,7 +202,12 @@ function update() {
         }
     }
     else {
-        if (maxCount === 3) {
+        showmistakesLeft();
+        if (mistakesLeft <= 0) {
+            gameOver = true;
+            endGame(false);
+        }
+        else if (maxCount === 3) {
             let popup = document.getElementById("popup");
             popup.textContent = "One away...";
             popup.classList.add("show");
@@ -218,11 +223,6 @@ function update() {
                 button.classList.remove("shake");
             })
         })
-        showmistakesLeft();
-        if (mistakesLeft <= 0) {
-            gameOver = true;
-            endGame(false);
-        }
     }
 }
 
@@ -312,6 +312,11 @@ function playAgain() {
     let replay = document.getElementById("replay");
     replay.style.opacity = "0";
     replay.classList.add("locked");
+
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.classList.remove("locked");
+    });
 
     initTiles();
     buildBoard();
